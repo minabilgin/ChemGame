@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/LevelEnterance/Level5.unity
     guid: 45e2c49f6f17a57469360efbc05c8012
+  - enabled: 1
+    path: Assets/LevelEnterance/Entrance.unity
+    guid: 9e6c43bd40349fc45a5ab92d7783fa4f
   m_configObjects: {}
