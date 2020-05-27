@@ -8,6 +8,8 @@ public class Exit : MonoBehaviour
 
     private void OnMouseDown()
     {
+        if (GameObject.FindObjectOfType<Canvas>().transform.GetChild(0).gameObject.activeInHierarchy) return;
+
         Application.Quit();
         Debug.Log("Quit");
     }

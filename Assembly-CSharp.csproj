@@ -66,6 +66,8 @@
     <Compile Include="Assets\Scripts\Back.cs" />
     <Compile Include="Assets\Scripts\DoorHandler.cs" />
     <Compile Include="Assets\Scripts\Exit.cs" />
+    <Compile Include="Assets\Scripts\Lab1_Answers.cs" />
+    <Compile Include="Assets\Scripts\Lab1_start.cs" />
     <Compile Include="Assets\Scripts\NameInputs.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>

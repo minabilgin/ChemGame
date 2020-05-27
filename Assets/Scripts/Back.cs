@@ -7,6 +7,7 @@ public class Back : MonoBehaviour
 {
     private void OnMouseDown()
     {
-        SceneManager.LoadScene(0);
+        if (GameObject.FindObjectOfType<Canvas>().transform.GetChild(0).gameObject.activeInHierarchy) return;
+        SceneManager.LoadScene(1); //When clicked on back button, loads home scene
     }
 }
