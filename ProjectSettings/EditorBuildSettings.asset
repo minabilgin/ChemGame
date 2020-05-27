@@ -6,7 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/LevelEnterance/Menu.unity
+    path: Assets/LevelEnterance/Entrance.unity
+    guid: 9e6c43bd40349fc45a5ab92d7783fa4f
+  - enabled: 1
+    path: Assets/LevelEnterance/Home.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
     path: Assets/LevelEnterance/Level1.unity
@@ -23,7 +26,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/LevelEnterance/Level5.unity
     guid: 45e2c49f6f17a57469360efbc05c8012
-  - enabled: 1
-    path: Assets/LevelEnterance/Entrance.unity
-    guid: 9e6c43bd40349fc45a5ab92d7783fa4f
   m_configObjects: {}
