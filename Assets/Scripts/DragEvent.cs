@@ -34,9 +34,11 @@ public class DragEvent : MonoBehaviour
         {
             transform.position = dropPos;
             isContacting = false;
-            startPosition = transform.position;
+            //startPosition = transform.position;
+            //transform.position = startPosition;
         }
         else transform.position = startPosition;
+        //else startPosition = transform.position;
 
         /*if (isContacting)
         {
