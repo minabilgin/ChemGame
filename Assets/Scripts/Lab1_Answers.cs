@@ -14,7 +14,7 @@ public class Lab1_Answers : MonoBehaviour
 
     public void ImageHide() //The function which we call with OnClick event.
     {
-        Debug.Log("method calisiyor");
+        Debug.Log("wrong answer image hide");
         IntroImage.SetActive(false);
         //PanelDialogue.SetActive(false);
     }

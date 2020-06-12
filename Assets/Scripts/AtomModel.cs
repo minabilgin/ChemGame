@@ -1,10 +1,98 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AtomModel : MonoBehaviour
 {
-	//public Transform dropArea;
+    public Sprite solidSprite, liquidSprite, gasSprite;
+    public SpriteRenderer monitorSprite;
+
+	void Start()
+    {
+        //startPosition = transform.position;
+
+        monitorSprite = gameObject.GetComponent<SpriteRenderer>();
+        solidSprite = gameObject.GetComponent<Sprite>();
+        liquidSprite = gameObject.GetComponent<Sprite>();
+        gasSprite = gameObject.GetComponent<Sprite>();
+
+		//Sprite sp = Resources.Load<Sprite>("Sprites/my_sprite");
+		/*solidSprite = Resources.Load<Sprite>("Exercise2D/solidSprite");
+		liquidSprite = Resources.Load<Sprite>("Exercise2D/liquidSprite");
+		gasSprite = Resources.Load<Sprite>("Exercise2D/gasSprite");
+		monitorSprite = Resources.Load<SpriteRenderer>("MonitorSprite");*/
+
+		//monitorSprite.sprite = solidSprite;
+        /*solidSprite = Resources.Load<Sprite>("Solid");
+		liquidSprite = Resources.Load<Sprite>("Liquid");
+		gasSprite = Resources.Load<Sprite>("Gas");*/
+
+    }
+
+	public void OnTriggerStay(Collider other)
+    {
+		//Debug.Log("OnTriggerStay");
+
+		if (other.CompareTag("AtomMachine") && this.CompareTag("Solid"))
+        {
+            monitorSprite.sprite = solidSprite;
+            monitorSprite.enabled = true;
+			Debug.Log("Katı");
+        }
+        else if (other.CompareTag("AtomMachine") && this.CompareTag("Liquid"))
+        {
+            monitorSprite.sprite = liquidSprite;
+            monitorSprite.enabled = true;
+			Debug.Log("Sıvı");
+
+		}
+		else if (other.CompareTag("AtomMachine") && this.CompareTag("Gas"))
+        {
+            monitorSprite.sprite = gasSprite;
+            monitorSprite.enabled = true;
+			Debug.Log("Gaz");
+
+		}
+	}
+
+
+	public void OnTriggerExit(Collider other)
+	{
+		if (other.CompareTag("AtomMachine") && this.CompareTag("Solid"))
+		{
+			//monitorSprite.sprite = solidSprite;
+			monitorSprite.enabled = false;
+		}
+		else if (other.CompareTag("AtomMachine") && this.CompareTag("Liquid"))
+		{
+			//monitorSprite.sprite = liquidSprite;
+			monitorSprite.enabled = false;
+		}
+		else if (other.CompareTag("AtomMachine") && this.CompareTag("Gas"))
+		{
+			//monitorSprite.sprite = gasSprite;
+			monitorSprite.enabled = false;
+		}
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/*///public Transform dropArea;
 	private float mouseZCoord;
 
 	private bool isTouch;
@@ -36,18 +124,18 @@ public class AtomModel : MonoBehaviour
 		/*solidSprite = Resources.Load<Sprite>("solidSprite");
 		liquidSprite = Resources.Load<Sprite>("liquidSprite");
 		gasSprite = Resources.Load<Sprite>("gasSprite");*/
-		//monitorSprite.sprite = 
+	//monitorSprite.sprite = 
 
-		/*solidSprite = Resources.Load<Sprite>("Solid");
-		liquidSprite = Resources.Load<Sprite>("Liquid");
-		gasSprite = Resources.Load<Sprite>("Gas");*/
+	/*solidSprite = Resources.Load<Sprite>("Solid");
+	liquidSprite = Resources.Load<Sprite>("Liquid");
+	gasSprite = Resources.Load<Sprite>("Gas");*/
 
-		//spriteArray = Resources.LoadAll<Sprite>();
+	//spriteArray = Resources.LoadAll<Sprite>();
 
-		/*solidRend.sprite = solidSprite;
-		liquidRend.sprite = liquidSprite;
-		gasRend.sprite = gasSprite;*/
-	}
+	/*solidRend.sprite = solidSprite;
+	liquidRend.sprite = liquidSprite;
+	gasRend.sprite = gasSprite;*/
+	//}
 
 	/*public List<Sprite> spriteLists = new List<Sprite>();
 	public SpriteRenderer monitorSprite;*/
@@ -56,7 +144,7 @@ public class AtomModel : MonoBehaviour
 	{
 		startPosition = transform.position;
 	}*/
-	private void OnMouseUp()
+	/*private void OnMouseUp()
 	{
 		Debug.Log("omu");
 
@@ -115,7 +203,7 @@ public class AtomModel : MonoBehaviour
 	}*/
 
 
-	private void OnTriggerStay(Collider other)
+	/*private void OnTriggerStay(Collider other)
 	{
 		isTouch = false;
 		if (isContacting)
@@ -196,17 +284,63 @@ public class AtomModel : MonoBehaviour
 
 		}*/
 
-		/*if (isSolid)
+	/*if (isSolid)
+	{
+		monitorSprite.sprite = solidSprite;
+	}
+	else if (isLiquid)
+	{
+		monitorSprite.sprite = liquidSprite;
+	}
+	else if (isGas)
+	{
+		monitorSprite.sprite = gasSprite;
+	}*/
+	//}
+
+	/*private void OnMouseDown()
+{
+	isTouch = true;
+
+}
+
+private void OnTriggerStay(Collider other)
+{
+	if (other.name == "DropArea")
+	{
+		isContacting = true;
+	}
+}
+private void OnTriggerExit(Collider other)
+{
+	if (other.name == "DropArea")
+	{
+		isContacting = false;
+	}
+}
+
+private void OnMouseUp(Collider other)
+{
+	isTouch = false;
+	if (isContacting)
+	{
+		transform.position = dropArea.position;
+		if (other.CompareTag("Solid"))
 		{
 			monitorSprite.sprite = solidSprite;
+			monitorSprite.enabled = true;
 		}
-		else if (isLiquid)
+		else if (other.CompareTag("Liquid"))
 		{
 			monitorSprite.sprite = liquidSprite;
+			monitorSprite.enabled = true;
 		}
-		else if (isGas)
+		else if (other.CompareTag("Gas"))
 		{
 			monitorSprite.sprite = gasSprite;
-		}*/
+			monitorSprite.enabled = true;
+		}
 	}
+	//else transform.position = startPosition;
+}*/
 }

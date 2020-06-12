@@ -72,17 +72,17 @@ public class DragEvent : MonoBehaviour
             isContacting = true;
             dropPos = other.transform.position;
         }
-       if (other.name == "DropSolid" && status == 1 )
+       if (other.name == "DropSolid" /*&& status == 1*/ )
         {
             isContacting = true;
             dropPos = other.transform.position;
         }
-        if (other.name == "DropLiquid" && status == 2)
+        if (other.name == "DropLiquid" /*&& status == 2*/)
         {
             isContacting = true;
             dropPos = other.transform.position;
         }
-        if (other.name == "DropGas" && status == 3)
+        if (other.name == "DropGas"/* && status == 3*/)
         {
             isContacting = true;
             dropPos = other.transform.position;
