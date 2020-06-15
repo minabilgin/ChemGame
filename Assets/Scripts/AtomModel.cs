@@ -12,10 +12,10 @@ public class AtomModel : MonoBehaviour
     {
         //startPosition = transform.position;
 
-        monitorSprite = gameObject.GetComponent<SpriteRenderer>();
-        solidSprite = gameObject.GetComponent<Sprite>();
-        liquidSprite = gameObject.GetComponent<Sprite>();
-        gasSprite = gameObject.GetComponent<Sprite>();
+      ////  monitorSprite = gameObject.GetComponent<SpriteRenderer>();
+      //  solidSprite = gameObject.GetComponent<Sprite>();
+      //  liquidSprite = gameObject.GetComponent<Sprite>();
+       // gasSprite = gameObject.GetComponent<Sprite>();
 
 		//Sprite sp = Resources.Load<Sprite>("Sprites/my_sprite");
 		/*solidSprite = Resources.Load<Sprite>("Exercise2D/solidSprite");

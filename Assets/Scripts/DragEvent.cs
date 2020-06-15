@@ -87,7 +87,23 @@ public class DragEvent : MonoBehaviour
             isContacting = true;
             dropPos = other.transform.position;
         }
-        
+
+
+        if (other.CompareTag("Solid") && this.CompareTag("Solid"))
+        {
+            CheckAnswer.instance.isSolid = true;
+            Debug.Log("Solid true");
+        }
+        if (other.CompareTag("Liquid") && this.CompareTag("Liquid"))
+        {
+            CheckAnswer.instance.isLiquid = true;
+            Debug.Log("Liquid true" );
+        }
+        if (other.CompareTag("Gas") && this.CompareTag("Gas"))
+        {
+            CheckAnswer.instance.isGas = true;
+            Debug.Log("Gas true" );
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -95,6 +111,21 @@ public class DragEvent : MonoBehaviour
         if (other.name == "DropArea"|| other.name == "DropSolid" || other.name == "DropLiquid" || other.name == "DropGas")
         {
             isContacting = false;
+        }
+        if (other.CompareTag("Solid") && this.CompareTag("Solid"))
+        {
+            CheckAnswer.instance.isSolid = false;
+            Debug.Log("Solid False");
+        }
+        if (other.CompareTag("Liquid") && this.CompareTag("Liquid"))
+        {
+            CheckAnswer.instance.isLiquid = false;
+            Debug.Log("Liquid False");
+        }
+        if (other.CompareTag("Gas") && this.CompareTag("Gas"))
+        {
+            CheckAnswer.instance.isGas = false;
+            Debug.Log("GasFalse");
         }
     }
 

@@ -5,12 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class CheckAnswer : MonoBehaviour
 {
+    public static CheckAnswer instance;
    // public List<GameObject> listBox;
     //public GameObject solidBox, liquidBox, gasBox;
     public GameObject TrueAnswer, FalseAnswer;
     //public string levelName = "";
-    private bool isSolid, isLiquid, isGas;
+    public bool isSolid, isLiquid, isGas;
 
+    private void Awake()
+    {
+        instance = this;
+    }
     private void Start()
     {
         isSolid = false;
@@ -20,52 +25,12 @@ public class CheckAnswer : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("OTS");
-        Debug.Log("Other = " + other.name);
-        Debug.Log("This = " + this.name);
-        //This = Azot, Tahta Kutu, Çay
-        //Other = DropSolid, DropLiquid, DropGas, başka scriptten çekiyor. 
-        //Bir şekilde tamamını true döndürüyor ama buton doğru da konsa hepsini yanlış görüyor. 
-        //Image'leri active etmiyor. 
-        //UPDATE: Yerdeki itemlerin colliderlarını kaldırdığımda OnTriggerStay'e girmiyor. 
-        //Dolayısıyla şu an hangisi this hangisi other belli değil.
-        //This Çarpıştırdığım, other çarpıştırılan ise, area'ları duruyor kabul ediyor, 
-        //Objelerimi hareket ediyor kabul ediyor. 
 
-        if (other.CompareTag("Solid") && this.CompareTag("Solid"))
-        {
-            isSolid = true;
-            Debug.Log("Solid true" + isSolid);
-        }
-        if (other.CompareTag("Liquid") && this.CompareTag("Liquid"))
-        {
-            isLiquid = true;
-            Debug.Log("Liquid true" + isLiquid);
-        }
-        if (other.CompareTag("Gas") && this.CompareTag("Gas"))
-        {
-            isGas = true;
-            Debug.Log("Gas true" + isGas);
-        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Solid") && this.CompareTag("Solid"))
-        {
-            isSolid = false;
-            Debug.Log("Solid False");
-        }
-        if (other.CompareTag("Liquid") && this.CompareTag("Liquid"))
-        {
-            isLiquid = false;
-            Debug.Log("Liquid False");
-        }
-        if (other.CompareTag("Gas") && this.CompareTag("Gas"))
-        {
-            isGas = false;
-            Debug.Log("GasFalse");
-        }
+        
 
     }
 
@@ -83,6 +48,7 @@ public class CheckAnswer : MonoBehaviour
         if (isSolid == true && isLiquid == true && isGas == true)
         {
             TrueAnswer.SetActive(true);
+            Debug.Log("ALL OF THESE TRUE");
         }
         else if (isSolid == false && isLiquid == true && isGas == true)
         {
