@@ -8,6 +8,11 @@ TagManager:
   - Liquid
   - Gas
   - AtomMachine
+  - T
+  - F
+  - Atom
+  - Cekirdek
+  - Yorunge
   layers:
   - Default
   - TransparentFX
